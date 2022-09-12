@@ -78,7 +78,6 @@ var fight = function(enemyName) {
 
 // Function to start a new game
 var startGame = function() {
-    // reset player stats
     playerHealth = 100;
     playerAttack = 10;
     playerMoney = 10;
