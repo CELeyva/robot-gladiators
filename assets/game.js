@@ -29,10 +29,20 @@ var fightOrSkip = function () {
 }
 
 var fight = function(enemy) {
-    while (playerInfo.health > 0 && enemy.health > 0) {
-    var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+    var isPlayerTurn = true;
+    if (Math.random() > 0.5){
+        isPlayerTurn = false; 
+    }
 
-    fightOrSkip();
+    while (playerInfo.health > 0 && enemy.health > 0) {
+        if (isPlayerTurn) {
+
+    var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+        }
+
+    if (fightOrSkip()) {
+        break;
+    }
 
     var damage= randomNumber(playerInfo.attack-3, playerInfo.attack);
 
@@ -65,6 +75,7 @@ var fight = function(enemy) {
     } else {
         window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left. ');
     }
+    isPlayerTurn = !isPlayerTurn;
 }
 };
 
