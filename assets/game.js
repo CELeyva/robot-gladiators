@@ -20,6 +20,8 @@ var fightOrSkip = function () {
         if (confirmSkip) {
             window.alert (playerInfo.name + ' has decided to skip the fight. Goodbye! ');
             playerInfo.money = Math.max(0, playerInfo.money-10);
+
+            return true;
             shop ();
         }
 
